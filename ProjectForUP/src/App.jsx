@@ -1,39 +1,32 @@
 import React, { useState } from "react";
 import './App.css'
 
-function ThreeButtons() {
+function Buttons() {
   const [message, setMessage] = useState("");
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Приклад з трьома кнопками</h2>
+    <div className="container">
+  <h2 className="title">Приклад з чотирма кнопками</h2>
 
-      <button 
-        onClick={() => setMessage("Натиснута перша кнопка")}
-        style={{ margin: "10px", padding: "10px 20px" }}
-      >
-        Кнопка 1
-      </button>
+  <button className="button" onClick={() => setMessage("Натиснута перша кнопка")}>
+    Кнопка 1
+  </button>
 
-      <button 
-        onClick={() => setMessage("Натиснута друга кнопка")}
-        style={{ margin: "10px", padding: "10px 20px" }}
-      >
-        Кнопка 2
-      </button>
+  <button className="button" onClick={() => setMessage("Натиснута друга кнопка")}>
+    Кнопка 2
+  </button>
 
-      <button 
-        onClick={() => setMessage("Натиснута третя кнопка")}
-        style={{ margin: "10px", padding: "10px 20px" }}
-      >
-        Кнопка 3
-      </button>
+  <button className="button" onClick={() => setMessage("Натиснута третя кнопка")}>
+    Кнопка 3
+  </button>
 
-      <p style={{ marginTop: "20px", fontSize: "18px" }}>
-        {message}
-      </p>
-    </div>
+  <button className="button" onClick={() => setMessage("Натиснута четверта кнопка")}>
+    Кнопка 4
+  </button>
+
+  <p className="message">{message}</p>
+</div>
   );
 }
 
-export default ThreeButtons;
+export default Buttons;
