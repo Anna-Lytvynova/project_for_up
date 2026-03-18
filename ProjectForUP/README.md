@@ -12,7 +12,7 @@ When you click a button, a message appears on the screen.
 
 ## Technologies
 
-* React.js
+* Test for conflict
 * JavaScript
 
 ## Installation
