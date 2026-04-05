@@ -6,7 +6,7 @@ function Buttons() {
 
   return (
     <div className="container">
-      <h1 className="title">Тестовий текст</h1>
+      <h1 className="title">Test</h1>
 
       <button className="button" onClick={() => setMessage("Натиснута перша кнопка")}>
         Кнопка 1
