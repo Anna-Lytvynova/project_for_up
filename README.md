@@ -1,4 +1,5 @@
 # Three Buttons React App
+[![CI/CD Pipeline](https://github.com/Anna-Lytvynova/project_for_up/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Anna-Lytvynova/project_for_up/actions/workflows/ci-cd.yml)
 
 This is a simple React application with three buttons.
 When you click a button, a message appears on the screen.
