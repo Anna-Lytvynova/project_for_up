@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+# Налаштування тригерів
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  # Налаштування етапу перевірки
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Отримання коду з репозиторію
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Налаштування середовища Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # Встановлення залежностей
+      - name: Install dependencies
+        run: npm ci
+
+      # Статичний аналіз коду
+      - name: Run linter
+        run: npm run lint
+
+      # Запуск юніт-тестів
+      - name: Run unit tests
+        run: npm run test:unit
+
+      # Збірка артефакту
+      - name: Build for production
+        run: npm run build
+
+      # Завантаження артефактів
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
