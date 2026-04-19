@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './App.css'
 
 function Buttons() {
   const [message, setMessage] = useState("");
+  const appStatus = import.meta.env.VITE_APP_STATUS;
 
   return (
     <div className="container">
-      <h1 className="title">Second test</h1>
+      <div className="app-badge">
+        Mode: {appStatus}
+      </div>
+
+      <h1 className="title">Перевірка роботи кнопок</h1>
 
       <button className="button" onClick={() => setMessage("Натиснута перша кнопка")}>
         Кнопка 1
