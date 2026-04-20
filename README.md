@@ -51,3 +51,6 @@ http://localhost:3000
 ## Author
 
 Anna Lytvynova 2026
+
+
+## TEST DEPLOYING
