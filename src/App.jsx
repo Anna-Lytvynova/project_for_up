@@ -42,14 +42,18 @@ function Buttons() {
           Кнопка 2
         </button>
 
+        <button className="button" onClick={() => handleButtonClick(3, "Натиснута третя кнопка")}>
+          Кнопка 3
+        </button>
+
+        <button className="button" onClick={() => handleButtonClick(4, "Натиснута четверта кнопка")}>
+          Кнопка 4
+        </button>
+
         {showExtraButtons && (
           <>
-            <button className="button" onClick={() => handleButtonClick(3, "Натиснута третя кнопка")}>
-              Кнопка 3
-            </button>
-
-            <button className="button" onClick={() => handleButtonClick(4, "Натиснута четверта кнопка")}>
-              Кнопка 4
+            <button className="button" onClick={() => handleButtonClick(5, "Натиснута п'ята кнопка")}>
+              Кнопка 5
             </button>
           </>
         )}
