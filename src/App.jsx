@@ -14,8 +14,14 @@ function Buttons() {
       } else {
         setShowExtraButtons(false);
       }
+      if (posthog.isFeatureEnabled('show-urgent-buttons') ) {
+        setShowExtraButtons(true);
+      }else {
+        setShowExtraButtons(false);
+      }
     });
   }, []);
+
 
   const handleButtonClick = (buttonNumber, msg) => {
     setMessage(msg);
