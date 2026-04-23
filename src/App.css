@@ -60,11 +60,14 @@ button {
   font-family: inherit;
   cursor: pointer;
   color: white;
-  
+
   /* КНОПКА: Фіолетово-синій градієнт */
   background: linear-gradient(135deg, #646cff 0%, #9333ea 100%);
   box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    filter 0.2s;
 }
 
 button:hover {
@@ -89,7 +92,7 @@ button:focus-visible {
     color: #213547;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   }
-  
+
   h1 {
     background: linear-gradient(to right, #4f46e5, #7c3aed);
     -webkit-background-clip: text;

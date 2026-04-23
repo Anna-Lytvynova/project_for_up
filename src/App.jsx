@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import posthog from 'posthog-js';
-import './App.css';
+import posthog from "posthog-js";
+import "./App.css";
 
 function Buttons() {
   const [message, setMessage] = useState("");
@@ -9,56 +9,69 @@ function Buttons() {
 
   useEffect(() => {
     posthog.onFeatureFlags(() => {
-      if (posthog.isFeatureEnabled('show-urgent-filter')) {
+      if (posthog.isFeatureEnabled("show-urgent-filter")) {
         setShowExtraButtons(true);
       } else {
         setShowExtraButtons(false);
       }
-      if (posthog.isFeatureEnabled('show-urgent-buttons') ) {
+      if (posthog.isFeatureEnabled("show-urgent-buttons")) {
         setShowExtraButtons(true);
-      }else {
+      } else {
         setShowExtraButtons(false);
       }
+      //new line to try
     });
   }, []);
 
-
   const handleButtonClick = (buttonNumber, msg) => {
     setMessage(msg);
-    posthog.capture('button_clicked', { 
+    posthog.capture("button_clicked", {
       button_number: buttonNumber,
-      feature_flag_active: showExtraButtons 
+      feature_flag_active: showExtraButtons,
     });
   };
 
   return (
     <div className="container">
-      <div className="app-badge">
-        Mode: {appStatus}
-      </div>
+      <div className="app-badge">Mode: {appStatus}</div>
 
       <h1 className="title">Перевірка роботи кнопок</h1>
 
       <div className="button-group">
-        <button className="button" onClick={() => handleButtonClick(1, "Натиснута перша кнопка")}>
+        <button
+          className="button"
+          onClick={() => handleButtonClick(1, "Натиснута перша кнопка")}
+        >
           Кнопка 1
         </button>
 
-        <button className="button" onClick={() => handleButtonClick(2, "Натиснута друга кнопка")}>
+        <button
+          className="button"
+          onClick={() => handleButtonClick(2, "Натиснута друга кнопка")}
+        >
           Кнопка 2
         </button>
 
-        <button className="button" onClick={() => handleButtonClick(3, "Натиснута третя кнопка")}>
+        <button
+          className="button"
+          onClick={() => handleButtonClick(3, "Натиснута третя кнопка")}
+        >
           Кнопка 3
         </button>
 
-        <button className="button" onClick={() => handleButtonClick(4, "Натиснута четверта кнопка")}>
+        <button
+          className="button"
+          onClick={() => handleButtonClick(4, "Натиснута четверта кнопка")}
+        >
           Кнопка 4
         </button>
 
         {showExtraButtons && (
           <>
-            <button className="button" onClick={() => handleButtonClick(5, "Натиснута п'ята кнопка")}>
+            <button
+              className="button"
+              onClick={() => handleButtonClick(5, "Натиснута п'ята кнопка")}
+            >
               Кнопка 5
             </button>
           </>
