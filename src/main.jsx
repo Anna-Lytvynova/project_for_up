@@ -18,7 +18,7 @@ Sentry.init({
     Sentry.replayIntegration(),
   ],
   tracesSampleRate: 1.0,
-  environment: "development",
+  environment: import.meta.env.MODE,
 });
 
 const container = document.getElementById("root");
