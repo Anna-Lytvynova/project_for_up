@@ -21,6 +21,10 @@ Sentry.init({
   environment: import.meta.env.MODE,
 });
 
+Sentry.metrics.count('button_click', 1);
+Sentry.metrics.gauge('page_load_time', 150);
+Sentry.metrics.distribution('response_time', 200);
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(<Buttons/>);
