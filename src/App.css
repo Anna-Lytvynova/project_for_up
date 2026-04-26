@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* ФОН: Глибокий темний градієнт */
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   background-attachment: fixed;
 
@@ -28,10 +27,10 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  justify-content: center; /* Центруємо контент */
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background: transparent; /* Щоб було видно градієнт :root */
+  background: transparent;
 }
 
 h1 {
@@ -39,7 +38,8 @@ h1 {
   line-height: 1.1;
   background: linear-gradient(to right, #646cff, #a855f7);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Градієнтний текст для заголовка */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
@@ -50,9 +50,15 @@ h1 {
   gap: 2rem;
 }
 
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 button {
-  width: 180px; /* Трохи збільшив для зручності */
-  border-radius: 12px; /* Більш закруглені кути */
+  width: 180px;
+  border-radius: 12px;
   border: none;
   padding: 0.8em 1.5em;
   font-size: 1em;
@@ -61,7 +67,6 @@ button {
   cursor: pointer;
   color: white;
 
-  /* КНОПКА: Фіолетово-синій градієнт */
   background: linear-gradient(135deg, #646cff 0%, #9333ea 100%);
   box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
   transition:
@@ -71,8 +76,8 @@ button {
 }
 
 button:hover {
-  transform: translateY(-2px); /* Ефект підстрибування */
-  filter: brightness(1.1); /* Легке освітлення при наведенні */
+  transform: translateY(-2px);
+  filter: brightness(1.1);
   box-shadow: 0 6px 20px rgba(100, 108, 255, 0.4);
 }
 
@@ -86,7 +91,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Налаштування для світлої теми */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -95,6 +99,8 @@ button:focus-visible {
 
   h1 {
     background: linear-gradient(to right, #4f46e5, #7c3aed);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
 
