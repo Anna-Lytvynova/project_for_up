@@ -6,10 +6,10 @@ import "./index.css";
 import Buttons from "./App.jsx";
 
 posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
-  person_profiles: "identified_only",
+  api_host: '/ingest',
+  ui_host: 'https://eu.posthog.com',
+  person_profiles: 'identified_only',
 });
-console.log(posthog);
 
 Sentry.init({
   dsn: import.meta.env.VITE_SENTRY_DSN,
